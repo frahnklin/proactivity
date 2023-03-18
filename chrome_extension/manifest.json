@@ -1,0 +1,17 @@
+{
+    "name": "BLACKLISTED!",
+    "description": "Locks and unlocks the websites that the user can use. Extension is an add-on for the website ProActivity",
+    "version": "0.0.0.1",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "app.js"
+            ]
+        }
+    ],
+    "permissions": ["storage"]
+}

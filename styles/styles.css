@@ -1,0 +1,123 @@
+/* Set global font and background */
+html, body {
+	/* background-color: #dfe8e1; */
+	/* background-image: url("/images/background.gif"); */
+	/* background-size: cover; */
+	/* background-repeat: no-repeat; */
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 20px;
+}
+
+/* Make flexboxes */
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Style navbar */
+.navbar {
+	display: flex;
+	border-radius: 10px;
+	background: #1abc9c;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	display: flex;
+	align-items: center;
+	opacity: 0.9;
+	margin-top: 10px;
+	text-align: center;
+}
+
+#navbar-logo {
+	align-self: left;
+	border: 500px;
+}
+
+/* Style title */
+#title {
+	font-family: "Monaco", monospace;
+	color: white;
+	font-weight: bolder;
+	align-self: left;
+	font-size: larger;
+}
+
+.timer{
+	background-color: white;
+	height: 150px;
+	width: 400px;
+	text-align: center;
+	margin-left: 400px;
+	vertical-align: middle;
+	border-radius: 10px;
+	
+}
+
+#start{
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1.5rem;
+}
+
+#reset{
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1.5rem;
+}
+
+#redirect{
+	background-color: #1abc9c;
+	font-family: "Monaco", monospace;
+	color: white;
+	font-weight: bolder;
+	font-size: larger;
+	margin-bottom: 2px;
+	margin-left: 800px;
+	border: none;
+}
+
+.draggable {
+	float: left;
+	cursor: move;
+}
+
+#head {
+	display: flex;
+	border-radius: 10px;
+	background: #1abc9c;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	display: flex;
+	align-items: center;
+	opacity: 0.9;
+	margin-top: 10px;
+	text-align: center;
+}
+
+#form1{
+	color: #1abc9c;
+	font-weight: bolder;
+	margin-left: 50px;
+	margin-top:50px;
+    font-size: larger;
+}
+
+#submit{
+margin-left: 50px;
+}
+
+li:hover {
+    text-decoration: line-through;
+    cursor: pointer;
+}

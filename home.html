@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ProActivity</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<link href="/styles/styles.css" rel="stylesheet" type="text/css">
+	<style>html, body { background-color: #dfe8e1; background-image: url("/images/background.gif"); background-size: cover; background-repeat: no-repeat; }</style>
+
+	<!-- JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="/scripts/drag.js"></script>
+	<script src="/scripts/timer.js"></script>
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+	<link rel="manifest" href="/images/favicons/site.webmanifest">
+	<link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/images/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	<div class="navbar">
+		<a href="chrome_extension.zip" download>
+		<img src="/images/logo-titleless.png" alt="ProActivity Logo" height="75px">
+		</a>
+		<p id="title">ProActivity</p>
+		
+	
+		<div class="container mt-3">	
+			<div class="btn-group">
+				<button class="redirect" onclick="window.location.href='/page.html';">
+				Blocked sites
+				</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+	<div class="draggable">
+		<textarea style="border: 20px solid black; padding: 5px;" class="draggable typing-area" id="typing-area" name="typing-area" rows="20" cols="30" placeholder="Write down any important notes from your studies here!"	style="width: 411px; height: 234px;"></textarea>
+	</div>
+
+    <div class="draggable">
+        <div class="spotify-player">
+			<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1h0CEZCm6IbFTbxThn6Xcs?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+
+
+
+	<div class="draggable">
+		<div class="timer">
+			<h1 id="timer">25:00</h1>
+			<button id="start">Start</button>
+			<button id="reset">Reset</button>
+		</div>
+	</div>
+
+	
+	<script>
+		// Set the initial time in seconds
+let time = 1500;
+
+// Get the timer element
+const timerElement = document.getElementById("timer");
+
+// Get the start button
+const startButton = document.getElementById("start");
+
+// Get the reset button
+const resetButton = document.getElementById("reset");
+
+// Create a variable to hold the interval ID
+let intervalId;
+
+// Create a function to update the timer
+function updateTimer() {
+  const hours = Math.floor(time / 3600);
+  const minutes = Math.floor((time % 3600) / 60);
+  const seconds = time % 60;
+  timerElement.innerText = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  time--;
+  if (time < 0) {
+    clearInterval(intervalId);
+    timerElement.innerText = "Time's up!";
+  }
+}
+
+// Add an event listener to the start button
+startButton.addEventListener("click", () => {
+  if (!intervalId) {
+    intervalId = setInterval(updateTimer, 1000);
+  }
+});
+
+// Add an event listener to the reset button
+resetButton.addEventListener("click", () => {
+  clearInterval(intervalId);
+  intervalId = null;
+  time = 1500;
+  timerElement.innerText = "00:25:00";
+});
+
+	</script>
+
+</body>
+</html>
