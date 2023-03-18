@@ -12,7 +12,7 @@ function Create_Custom_Element(tag, attr_tag, attr_name, value) {
 }
 
 let site_list = [
-    "youtube.com", "www.youtube.com", "instagram.com", "www.instagram.com", "pornhub.com", "wwww.pornhub.com", "netflix.com", "www.netflix.com", "coolmathgames.com", "wwww.coolmathgames.com"
+    "youtube.com", "www.youtube.com", "instagram.com", "www.instagram.com", "netflix.com", "www.netflix.com", "coolmathgames.com", "wwww.coolmathgames.com"
 ];
 
 
